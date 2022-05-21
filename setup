@@ -1,0 +1,120 @@
+#! /data/data/com.termux/files/usr/bin/bash
+version=`getprop ro.build.version.release | sed -e 's/\.//g' | cut -c1`
+version1=`getprop ro.build.version.release`
+answer=$(mktemp)
+HIDECURSOR(){ echo -en "\033[?25l";}
+NORM(){ echo -en "\033[?12l\033[?25h";}
+spin () {
+
+local pid=$!
+local delay=0.05
+local spinstr='|/-\'
+while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
+        local temp=${spinstr#?}
+	HIDECURSOR
+        printf "\e[1;34m\r[*] \e[1;32mit will take time..Please wait...  [\e[1;33m%c\e[1;32m]\e[0m  " "$spinstr"
+        local spinstr=$temp${spinstr%"$temp"}
+        sleep $delay
+        printf "\b\b\b\b\b\b"
+    done
+    printf "   \b\b\b"
+    NORM
+    printf "\e[1;33m[Done]\e[0m"
+    echo ""
+}
+box()
+{
+  local s=("$@") b w
+  for l in "${s[@]}"; do
+    ((w<${#l})) && { b="$l"; w="${#l}"; }
+  done
+  tput setaf 3
+  echo " -${b//?/-}-
+| ${b//?/ } |"
+  for l in "${s[@]}"; do
+    printf '| %s%*s%s |\n' "$(tput setaf 4)" "-$w" "$l" "$(tput setaf 3)"
+  done
+  echo "| ${b//?/ } |
+ -${b//?/-}-"
+  tput sgr 0
+}
+PKG_INSTALL() {
+	echo -e "\e[35m[\e[33m*\e[35m] \e[32mInstalling packages and requirements..."
+	echo;
+	( apt update && apt upgrade -y; apt install git python python2 python3 openssl figlet toilet -y; apt install python-pip;python install -r requirements.txt) &> /dev/null & spin;
+}
+BANNER() {
+	clear;toilet -t -f tinker-toy "N_BOMB." --gay -F border;tput cup 7 42;echo -e "\e[34mBoot Script \e[32m2.1.2\e[0m";tput cup 9 0;
+}
+clear
+PKG_INSTALL
+BANNER
+echo
+echo -e "$(tput setab 3)$(tput setab 1) Note : $(tput sgr 0)" "\e[0m\e[32m Type your option without using any blank space\e[0m";
+echo
+#(sleep 10) &> /dev/null & spin
+echo -e "\e[0;31mPlease Read Instruction Carefully !!!\033[0m)"
+echo " "
+
+    echo -e "\e[4;33mPress\033[0m\e[0;31m 1\033[0m To  Start SMS  Bomber "
+
+    echo -e "\e[4;33mPress\033[0m\e[0;31m 2\033[0m To  Start CALL Bomber "
+
+    echo -e "\e[4;33mPress\033[0m\e[0;31m 3\033[0m To  Start MAIL Bomber (Not Yet Available)"
+
+    echo -e "\e[4;33mPress\033[0m\e[0;31m 4\033[0m To  Update (Works On Linux And Linux Emulators) "
+
+    echo -e "\e[4;33mPress\033[0m\e[0;31m 5\033[0m To  Exit "
+tput setaf 4
+read ch
+    echo "select option "
+
+clear
+
+    if [ $ch -eq 1 ];then
+
+        python bomber.py --sms
+
+        exit
+
+    elif [ $ch -eq 2 ];then
+
+        python bomber.py --call
+
+        exit
+
+    elif [ $ch -eq 3 ];then
+
+        python bomber.py --mail
+
+        exit
+
+    elif [ $ch -eq 4 ];then
+
+        echo -e "\e[1;34m Downloading Latest Files..."
+
+        rm -f .update
+
+        python bomber.py --update
+
+        echo -e "\e[1;34m RUN N_BOMB Again..."
+
+        (sleep 10) &> /dev/null & spin
+
+        exit
+
+    elif [ $ch -eq 5 ];then
+
+        BANNER
+
+        exit
+    
+     else
+
+        echo -e "\e[4;32m Invalid Input !!! \e[0m"
+
+        pause
+
+    fi
+
+done
