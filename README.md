@@ -1,4 +1,4 @@
-Color
+
 # N_BOMB 🚀
 
 This Tool For CALL, SMS , AND EMAIL BOMBING. And Installation Commands Here.
