@@ -8,7 +8,7 @@ This Tool For CALL, SMS , AND EMAIL BOMBING. And Installation Commands Here.
 ONE LINE COMMAND 1️⃣
 
 ```bash
-  git clone https://github.com/N17R0-HACKERS/N_BOMB && cd N_BOMB && bash setup 
+ cd $HOME && git clone https://github.com/N17R0-HACKERS/N_BOMB && cd N_BOMB && bash setup 
 ```
 
 
