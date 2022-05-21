@@ -14,7 +14,7 @@ ONE LINE COMMAND
 
 # My Tool data 
 ![followers](https://img.shields.io/github/followers/N17R0-HACKERS?style=social/)
-![STARS](https://img.shields.io/github/stars/N17R0-HACKERS/N_BOMB/)
+![STARS](https://img.shields.io/github/forks/N17R0-HACKERS/N_BOMB?style=social)
 ![FORKS](https://img.shields.io/github/forks/N17R0-HACKERS/N_BOMB/)
 ![LICENSE](https://img.shields.io/github/license/N17R0-HACKERS/N_BOMB/)
 ![ISSUES](https://img.shields.io/github/issues/N17R0-HACKERS/N_BOMB/)
