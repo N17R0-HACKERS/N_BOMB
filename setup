@@ -66,8 +66,10 @@ echo " "
 
     echo -e "\e[4;33mPress\033[0m\e[0;31m 5\033[0m To  Exit "
 tput setaf 4
+echo " " 
+
+echo -ne "\e[92m#SELECT OPTION\e[92m: "
 read ch
-    echo "select option "
 
 clear
 
