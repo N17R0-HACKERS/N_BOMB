@@ -18,3 +18,6 @@ ONE LINE COMMAND
 [![LICENSE](https://img.shields.io/github/license/N17R0-HACKERS/N_BOMB/)
 [![ISSUES](https://img.shields.io/github/issues/N17R0-HACKERS/N_BOMB/)
 
+<p align="center">
+  <a href="https://github.com/N17R0-HACKERS"><img title="Author" src="https://img.shields.io/badge/Author-N17R0-HACKERS-blue.svg?style=for-the-badge&logo=github" /></a>
+</p>
