@@ -41,7 +41,7 @@ box()
 PKG_INSTALL() {
 	echo -e "\e[35m[\e[33m*\e[35m] \e[32mInstalling packages and requirements..."
 	echo;
-	( apt update && apt upgrade -y; apt install git python python2 python3 openssl figlet toilet -y; apt install python-pip;python install -r requirements.txt) &> /dev/null & spin;
+	( apt update && apt upgrade -y; apt install git python python2 python3 openssl figlet toilet -y; apt install python-pip ;apt install figlet toilet ruby ncurses-utils wget exa termux-api termux-tools -y;gem install lolcat;python install -r requirements.txt) &> /dev/null & spin;
 }
 BANNER() {
 	clear;toilet -t -f tinker-toy "N_BOMB." --gay -F border;tput cup 7 42;echo -e "\e[34mBoot Script \e[32m2.1.2\e[0m";tput cup 9 0;
