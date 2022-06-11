@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 # -*- coding: UTF-8 -*-
 
 import os
@@ -643,7 +642,7 @@ except FileNotFoundError:
 
 __VERSION__ = get_version()
 
-__CONTRIBUTORS__ = ['N17R0HACKERS', 'WHOAMI']
+__CONTRIBUTORS__ = ['N17R0-HACKERS', 'WHOAMI']
 
 ALL_COLORS = [Fore.GREEN, Fore.RED, Fore.YELLOW, Fore.BLUE,
 
@@ -671,7 +670,7 @@ N_BOMB is not intented for malicious uses.
 
 parser = argparse.ArgumentParser(description=description,
 
-                                 epilog='Coded by N17R0HACKERS (WHOAMI) !!!')
+                                 epilog='Coded by N17R0-HACKERS (WHOAMI) !!!')
 
 parser.add_argument("-sms", "--sms", action="store_true",
 
